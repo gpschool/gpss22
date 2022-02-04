@@ -1,9 +1,9 @@
 # Site settings
-title: Gaussian Process and Uncertainty Quantification Summer School, 2021
+title: Gaussian Process and Uncertainty Quantification Summer School, 2022
 email:
 description: > # this means to ignore newlines until "baseurl:"
   Gaussian Process Summer School
-baseurl: "/gpss21" # the subpath of your site, e.g. /blog/
+baseurl: "/gpss22" # the subpath of your site, e.g. /blog/
 url: "http://gpss.cc" # the base hostname & protocol for your site
 logo: "gpss_logo.svg"
 twitter_username: sheffieldmlnet
@@ -16,7 +16,7 @@ youtube:
 
 github:
   edit: true
-  repository: gpss21
+  repository: gpss22
 
 markdown: kramdown
 
@@ -28,7 +28,7 @@ banner:
 
 analytics:
  google:
-   tracking_id: UA-62991754-1# Google tracking ID if applicable
+   tracking_id: 
 
 youtube:
   height: 315
@@ -40,13 +40,13 @@ conference:
   hosts:
 
   name: Gaussian Process Summer School
-  year: 2021
+  year: 2022
   month: September
   dates:
-  - 2021-09-13
-  - 2021-09-14
-  - 2021-09-15
-  - 2021-09-16
+  - 2022-09-12
+  - 2022-09-13
+  - 2022-09-14
+  - 2022-09-15
   organizers:
     - {given: Mauricio, family: Alvarez, url: "https://maalvarezl.github.io/", institute: University of Sheffield}
     - {given: Javier, family: Gonzalez, url: "http://javiergonzalezh.github.io/", institute: Microsoft Research Cambridge}
