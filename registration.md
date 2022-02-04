@@ -14,7 +14,7 @@ Academic                          |      280             |  450            |
 Industrial and Other Non-Academic |      780             |  780            |
 
 <br />
-
+<!--
 [//]: # (**The Summer Schools if now fully booked**)
 
 [//]: # (If you want to be added to the waiting list, please [contact us](mailto:mauricio.alvarez@sheffield.ac.uk).)
@@ -29,5 +29,5 @@ Registrants to the summer school can attend the workshop free of charge.
 
 [//]: # **Registrations are now closed**
 
-<!--If you have registered and need a visa to come to UK, please apply for a Standard visa. More details regarding the visa application can be found
+If you have registered and need a visa to come to UK, please apply for a Standard visa. More details regarding the visa application can be found
 [here](https://www.gov.uk/standard-visitor-visa). If you need an invitation letter for your visa application, please [contact us](mailto:m.t.smith@sheffield.ac.uk).-->
