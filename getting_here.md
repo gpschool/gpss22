@@ -1,6 +1,7 @@
 ---
 layout: default
 title: Getting Here
+weight: 4
 ---
 
 {% if site.map.show %}
