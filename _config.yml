@@ -63,7 +63,7 @@ previous_meeting:
   url: "http://gpss.cc/past_meetings.html"
 
 map:
-  show: false
+  show: true
   mapbox:
     latitude: 53.385396 # latitude of map center
     longitude: -1.472726 # longitude of map center
