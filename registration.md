@@ -17,7 +17,7 @@ Industrial and Other Non-Academic |      £780             |  £780            |
 
 ## Registration
 
-**Registration is full now.**
+**Registrations are now closed.**
 
 Contact the [organisers](mailto:m.t.smith@sheffield.ac.uk) if you want to be put on the waiting list.
 
