@@ -17,7 +17,13 @@ Industrial and Other Non-Academic |      £780             |  £780            |
 
 ## Registration
 
+**Registration is full now.**
+
+Contact the [organisers](mailto:m.t.smith@sheffield.ac.uk) if you want to be put on the waiting list.
+
+<!---
 Please register [here](https://onlineshop.shef.ac.uk/conferences-and-events/faculty-of-engineering/faculty-of-engineering/gaussian-process-summer-school-2022)! 
+-->
 
 Registrants to the summer school can attend the workshop free of charge.
 
