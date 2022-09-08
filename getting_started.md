@@ -91,7 +91,7 @@ Some of the options of GPyOpt depend on other external packages: `DIRECT`, `cma`
 
 ### pyDeepGP
 
-This is the library used for created deep Gaussian Processes with GPy.
+This is the library used for creating deep Gaussian Processes with GPy.
 
 ```
 $ pip install git+https://github.com/SheffieldML/pyDeepGP
