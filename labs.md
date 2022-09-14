@@ -57,7 +57,7 @@ This lab introduces the basic concepts of Bayesian optimisation with GPyOpt. The
 [![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/gpschool/labs/2022?filepath=lab_3.ipynb)&nbsp;&nbsp;&nbsp;
 <!--[![Mirror 1](https://img.shields.io/badge/mirror%201-binder-blueviolet)](https://mybinder.org/v2/gh/wilocw/labs/2022?filepath=lab_3.ipynb)&nbsp;&nbsp;&nbsp;
 [![Mirror 2](https://img.shields.io/badge/mirror%202-binder-blueviolet)](https://mybinder.org/v2/gh/SheffieldMLNet/labs/2022?filepath=lab_3.ipynb)&nbsp;&nbsp;&nbsp;-->
-[![Answers](https://img.shields.io/badge/answers-nbviewer-green)](https://nbviewer.jupyter.org/github/gpschool/labs/blob/2022/.answers/lab_3.ipynb)
+[![Answers](https://img.shields.io/badge/answers-nbviewer-green)](https://nbviewer.jupyter.org/github/gpschool/labs/blob/2022/answers/lab_3.ipynb)
 
 #### Lab 3 Extra: Deep Gaussian Processes
 
@@ -68,6 +68,6 @@ This lab introduces regression with hierarchical "deep" Gaussian processes. You 
 [![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/gpschool/labs/2022?filepath=lab_3_extra.ipynb)&nbsp;&nbsp;&nbsp;
 <!--[![Mirror 1](https://img.shields.io/badge/mirror%201-binder-blueviolet)](https://mybinder.org/v2/gh/wilocw/labs/2021?filepath=lab_3_extra.ipynb)&nbsp;&nbsp;&nbsp;
 [![Mirror 2](https://img.shields.io/badge/mirror%202-binder-blueviolet)](https://mybinder.org/v2/gh/SheffieldMLNet/labs/2022?filepath=lab_3_extra.ipynb)&nbsp;&nbsp;&nbsp;-->
-[![Answers](https://img.shields.io/badge/answers-nbviewer-green)](https://nbviewer.jupyter.org/github/wilocw/labs/blob/2022/.answers/lab_3_extra.ipynb)
+[![Answers](https://img.shields.io/badge/answers-nbviewer-green)](https://nbviewer.jupyter.org/github/wilocw/labs/blob/2022/answers/lab_3_extra.ipynb)
 
 
