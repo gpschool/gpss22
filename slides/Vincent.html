@@ -1,0 +1,765 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.3.1/reset.min.css" integrity="sha512-Mjxkx+r7O/OLQeKeIBCQ2yspG1P5muhAtv/J+p2/aPnSenciZWm5Wlnt+NOUNA4SHbnBIE/R2ic0ZBiCXdQNUg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.3.1/reveal.min.css" integrity="sha512-ITH3NSfntO7uI5n+BnxGNXpzDUoOsmAXuG37UDONLxNYIdc0EBBOOQ1xyc+t9ag9ETSuBXFApx+Rod0uURfDYw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.3.1/theme/serif.min.css" crossorigin="anonymous" referrerpolicy="no-referrer" />
+<script defer src="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.3.1/reveal.min.js" integrity="sha512-131e3mIrDAyUD075SVzvIjS0g97uDg0+/qAobDHd++h+lgFi4z88DVOpidm06jpb+0PzK4kcm9w79r6EHV0SkA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.15.3/katex.min.css" integrity="sha512-07YhC3P4/vS5HdgGuNAAeIxb5ee//efgRNo5AGdMtqFBUPYOdQG/sDK0Nl5qNq94kdEk/Pvu8pmN4GYUeucUkw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+<script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.15.3/katex.min.js" integrity="sha512-aMDiFsrEV3KzAn9EHwyBRS7y1APjZWt/Z/73ukLN2Ca2KcGGzlOQFQSnfOdnEcehpwMaQ8edlDB/0cMX2GsHbg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.15.3/contrib/auto-render.min.js" integrity="sha512-ZA/RPrAo88DlwRnnoNVqKINnQNcWERzRK03PDaA4GIJiVZvGFIWQbdWCsUebMZfkWohnfngsDjXzU6PokO4jGw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+<script src="https://cdn.tailwindcss.com"></script>
+
+
+<script>
+document.addEventListener("DOMContentLoaded", () => {
+Reveal.initialize({
+	hash: true,
+	center: false,
+	width: 1280,
+	height: 800,
+	maxScale: 5.0,
+	slideNumber: true,
+	transition: "fade",
+	keyboard: { 27: null },
+	pdfSeparateFragments: false,
+})
+Reveal.on('pdf-ready', () => 
+	document.querySelectorAll("section[data-no-print]").forEach(e => e.parentNode.remove())
+)
+renderMathInElement(document.body, {
+	delimiters: [
+		{left: "$$", right: "$$", display: true},
+		{left: "$", right: "$", display: false},
+	],
+	trust: true,
+	strict: false,
+	macros: {
+		"\\P": "\\mathbb{P}",
+		"\\E": "\\mathbb{E}",
+		"\\Cov": "\\operatorname{Cov}",
+		"\\N": "\\mathbb{N}",
+		"\\Z": "\\mathbb{Z}",
+		"\\Q": "\\mathbb{Q}",
+		"\\R": "\\mathbb{R}",
+		"\\C": "\\mathbb{C}",
+		"\\eps": "\\varepsilon",
+		"\\given": "\\mid",
+		"\\d": "{\\operatorname{d}}",
+		"\\v": "\\boldsymbol{#1}",
+		"\\m": "\\mathbf{#1}",
+		"\\f": "\\operatorname{#1}",
+		"\\s": "\\mathscr{#1}",
+		"\\c": "\\mathcal{#1}",
+		"\\bb": "\\mathbb{#1}",
+		"\\del": "\\left({#1}\\right)",
+		"\\sbr": "\\left[{#1}\\right]",
+		"\\cbr": "\\left\\{ {#1} \\right\\}",
+		"\\x": "\\times",
+		"\\t": "\\mathbin{\\text{#1}}",
+		"\\norm": "\\left\\Vert{#1}\\right\\Vert",
+		"\\innerprod": "\\left\\langle{#1},{#2}\\right\\rangle",
+		"\\pd": "\\partial",
+		"\\o": "\\circ",
+		"\\.": "\\cdot",
+		"\\h": "\\widehat{#1}",
+		"\\~": "\\sim",
+		"\\ubr": "\\underset{\\mathclap{#2}}{\\undergroup{#1}}"
+	}
+})
+document.querySelectorAll("*[data-class]").forEach(e => e.dataset.class.split(" ").forEach(c => e.classList.add(c)))
+})
+</script>
+
+<style>
+.twitter{display:inline-block;height:36px;width:36px;background-repeat:no-repeat;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' width='36' height='36'%3E%3Ctitle%3ETwitter%3C/title%3E%3Cpath fill='%23003c68' d='M15.97 3.058a6.54 6.54 0 0 1-1.878.515 3.28 3.28 0 0 0 1.438-1.809 6.53 6.53 0 0 1-2.076.793c-.596-.636-1.446-1.033-2.387-1.033a3.27 3.27 0 0 0-3.27 3.27c0 .256.03.506.085.745A9.28 9.28 0 0 1 1.14 2.124C.86 2.607.698 3.168.698 3.767a3.27 3.27 0 0 0 1.455 2.722c-.537-.017-1.04-.164-1.482-.41v.04a3.27 3.27 0 0 0 2.623 3.206 3.26 3.26 0 0 1-.861.115 3.27 3.27 0 0 1-.615-.059c.416 1.3 1.624 2.245 3.055 2.27a6.56 6.56 0 0 1-4.061 1.4c-.264 0-.524-.015-.78-.046 1.447.928 3.166 1.47 5.013 1.47 6.015 0 9.304-4.983 9.304-9.304a9.88 9.88 0 0 0-.009-.423c.636-.46 1.19-1.036 1.63-1.692z'/%3E%3C/svg%3E");}.print-pdf .reveal{touch-action:auto!important;}
+.h1{font-size:2.5em!important}.h2{font-size:2em!important}.h3{font-size:1.75em!important}.h4{font-size:1.5em!important}.h5{font-size:1.25em!important}.h6{font-size:1em!important}.small{font-size:80%!important}.footnotesize{font-size:65%!important}.scriptsize{font-size:50%!important}
+h1,h2,h3,h4,h5,h6,p { color: #111111!important; font-size: 1em!important; margin-top: 0.75em!important; margin-bottom: 0.75em!important; }
+section h2:first-child {margin-left: .0em; text-align: left; font-size: 1.2em!important;}
+ol,ul { margin-left: 2em!important; width: calc(100% - 2em)!important; }
+a,li { color: #111111!important; }
+.reveal-viewport { background-color:#ffffff; }
+.reveal { color: #ce2e31; }
+.slide-number { background-color: transparent!important; }
+.text-small-caps { font-family:Helvetica, Arial, sans-serif; font-variant: small-caps; }
+section footer { position:absolute; top: 100%; width: calc(100% - 6em); padding-left: 3em; padding-right: 3em; }
+.print-pdf .d-print-none{ display:none!important; }
+.print-pdf .reveal-viewport { background-color:transparent!important; }
+</style>
+
+<title>Spectral and Spherical Gaussian Processes</title>
+</head>
+<body>
+
+<div class="reveal">
+<div class="slides">
+
+<section class="h-full" data-auto-animate>
+<div class="h-full flex flex-col justify-center">
+<div class="basis-1/8"> </div>
+<div class="basis-2/4">
+<h1 class="items-center text-center h2">Spectral and Spherical<br> Gaussian Processes </h1>
+<h2 class="text-center">Gaussian Processes Summer School, 2022 </h2>
+</div>
+<div class="basis-1/4 items-end mb-4">
+<div class="flex h-full flex-row justify-between items-end">
+<img alt class="img-fluid w-72" src="figures/cambridge.png">
+<div class="text-2xl"><p>Vincent Dutordoir</p></div>
+</div>
+</div>
+</div>
+</section>
+
+<section class="h-screen" >
+<div class="h-full w-full flex flex-row items-center">
+<div class="w-1/2">
+<img class="scale-125" src="figures/sphere2.gif" alt="funny animation GIF">
+</div>
+<div class="w-1/2 flex flex-col ml-4 px-12">
+<p class="text-left fragment">Part 1: Spectral</p>
+<p class="text-left fragment">Part 2: Spherical</p>
+</div>
+</div>
+</section>
+
+
+<section class="h-full">
+<h2>Spectral Decomposition</h2>
+<div class="flex h-full">
+<div class="basis-1/2 h-full">
+<div class="text-3xl text-left fragment" data-fragment-index="4">
+<p>
+$$
+\phantom{\int}
+f(x) = \sum_i \xi_i \cos(\omega_i x)
+$$
+</p>
+</div>
+<img alt class="img-fluid -translate-y-10 scale-90 fragment" data-fragment-index="1" src="figures/function_1.png">
+</div>
+<div class="basis-1/2 h-full">
+<div class="text-3xl text-left fragment" data-fragment-index="2">
+<p>
+$$
+\xi_i = \int f(x) \cos(\omega_i x) \d x
+$$
+</p>
+</div>
+<img alt class="img-fluid -translate-y-10 scale-90 fragment" data-fragment-index="3" src="figures/spectrum_1.png">
+</div>
+</div>
+</section>
+
+
+<section class="h-full">
+<h2>Spectral Decomposition</h2>
+<div class="flex h-full">
+<div class="basis-1/2 h-full">
+<div class="text-3xl text-left">
+<p>
+$$
+\phantom{\int}
+f(x) = \sum_i \xi_i \cos(\omega_i x)
+$$
+</p>
+</div>
+<img alt class="img-fluid -translate-y-10 scale-90" src="figures/function_1.png">
+</div>
+<div class="basis-1/2 h-full">
+<div class="text-3xl text-left">
+<p>
+$$
+\xi_i = \int f(x) \cos(\omega_i x) \d x
+$$
+</p>
+</div>
+<img alt class="img-fluid -translate-y-10 scale-90" src="figures/spectrum_variances_1.png">
+</div>
+</div>
+</section>
+
+
+
+<section class="h-full">
+<h2 class="text-left mx-8 my-4">Spectral Decomposition</h2>
+<div class="flex justify-items-center">
+<div class="basis-1/2">
+<img alt class="img-fluid w-full" src="figures/function_2.png">
+</div>
+<div class="basis-1/2">
+<img alt class="img-fluid w-full" src="figures/spectrum_variances_2.png">
+</div>
+</div>
+</section>
+
+
+<section class="h-full">
+<h2 class="text-left mx-8 my-4">Spectral Decomposition</h2>
+<div class="flex justify-items-center">
+<div class="basis-1/2">
+<img alt class="img-fluid w-full" src="figures/function_3.png">
+</div>
+<div class="basis-1/2">
+<img alt class="img-fluid w-full" src="figures/spectrum_variances_3.png">
+</div>
+</div>
+</section>
+
+
+<section class="h-full">
+<h2 class="text-left mx-8 my-4">Spectral Decomposition</h2>
+<div class="flex justify-items-center">
+<div class="basis-1/2">
+<img alt class="img-fluid w-full" src="figures/function_4.png">
+</div>
+<div class="basis-1/2">
+<img alt class="img-fluid w-full" src="figures/spectrum_variances_4.png">
+</div>
+</div>
+</section>
+
+<section class="h-full">
+<h2>Spectral Decomposition</h2>
+<div class="text-3xl text-left">
+<p>
+Let us define a <span class="italic">function</span> as
+<span class="fragment">
+$
+f(x) = \sum_i \xi_i \phi_i(x)
+$
+</span>
+<span class="fragment">
+where
+$
+\xi_i \~_{i.i.d.} \c{N}(0, \lambda_i).
+$
+</span>
+</p>
+</div>
+<div class="flex">
+<div class="basis-1/2 fragment">
+<img alt class="img-fluid w-full" src="figures/function_4.png">
+</div>
+<div class="basis-1/2 h-100">
+<div class="text-2xl mt-12 -ml-20">
+<p>
+$$
+\begin{gathered}
+\htmlData{class=fragment pl-14}
+{
+\E[f(x)] 
+}
+\htmlData{class=fragment}
+{
+= \E[\sum_i \xi_i \phi_i(x)]
+} \\
+\htmlData{class=fragment pl-40}
+{
+= \sum_i \E[\xi_i] \phi_i(x)
+} \\
+\htmlData{class=fragment}
+{
+= 0
+}
+\end{gathered}
+$$
+<p>
+</div>
+<div class="text-2xl mt-12">
+<p>
+$$
+\begin{gathered}
+\htmlData{class=fragment pl-16}
+{
+\E[f(x) f(x')] 
+}
+\htmlData{class=fragment}
+{
+= \E[\sum_i \xi_i \phi_i(x)\sum_j \xi_j \phi_j(x') ]
+} \\
+\htmlData{class=fragment pl-44}
+{
+= \sum_{i,j} \E[\xi_i \xi_j] \phi_i(x)\phi_j(x')
+} \\
+\htmlData{class=fragment pl-28}
+{
+= \sum_{i} \lambda_i \phi_i(x)\phi_j(x')
+}
+\end{gathered}
+$$
+</p>
+</div>
+
+</div>
+</div>
+</section>
+
+<section>
+<h2>Degenerate kernels</h2>
+<div class="h-full flex">
+<div class="h-full basis-1/2 flex flex-col">
+<div class="basis-1/3 text-3xl pb-2 text-left">
+<p>
+A finite set of basis functions:
+$$
+\phi_i(x) = \textrm{e}^{-(x-c_i)^2}
+$$
+</p>
+</div>
+<div class="basis-2/3">
+<img alt class="img-fluid w-full" src="figures/basisfunctions.png">
+</div>
+</div>
+<div class="h-full basis-1/2 flex flex-col">
+<div class="basis-1/3 text-3xl text-left">
+<p>
+Leads to a GP:
+$$
+f \~ \c{GP}\Big(0, \sum\nolimits_i \lambda_i \phi_i(x) \phi_i(x')\Big)
+$$
+</p>
+</div>
+<div class="basis-2/3">
+<img alt class="img-fluid w-full" src="figures/degenerate_kernel.png">
+</div>
+</div>
+</div>
+</section>
+
+<section>
+<h2>Mercer Decomposition</h2>
+<div class="text-3xl">
+<p class="text-left">
+<span class="font-bold fragment">Theorem.</span>
+<span class="fragment">
+A positive definite kernels has an orthonormal basis $\{\phi_i(\cdot)\}_{i=0}^\infty$ (eigenfunctions) with a corresponding sequence of eigenvalues $\{\lambda_i\}_{i=0}^\infty$ that are non-negative. Then
+</span>
+</p>
+<div class="fragment">
+<p>
+$$
+k(x, x') = \sum\nolimits_i \lambda_i \phi_i(x) \phi_i(x').
+$$
+</p>
+</div>
+</div>
+<div class="flex text-3xl pt-4">
+<div class="basis-1/2 flex flex-col text-left fragment">
+<div><p class="font-bold">Pros.</p></div>
+<div class="fragment"><p>&bull; Cheap samples: <span class="text-2xl">$$f(x) = \sum\nolimits_i \xi_i \phi_i(x),\ \xi_i \sim \c{N}(0, \lambda_i).$$</span></p></div>
+<div class="fragment"><p>&bull; Design efficient approximations of $k$.</p></div>
+<div class="fragment"><p>&bull; Studying the decay rate $\lambda_i$.</p></div>
+</div>
+<div class="basis-1/2 flex flex-col text-left fragment">
+<div><p class="font-bold">Cons.</p></div>
+<p>&bull; $\lambda_i$'s and $\phi_i(\.)$'s depend on the kernel, space (e.g., $\R^d$, manifolds, etc.) and the measure on the space.</p>
+<p>&bull; For many often-used kernels (e.g., Matern, SE) this decomposition is not available.</p>
+</div>
+</div>
+
+</section>
+
+<section>
+<h2>Example</h2>
+<h3 class="text-left fragment">A non-degenerate kernel with known Mercer decomposition on $\c{S}^1$.</h3>
+<div class="flex flex-row">
+<div class="basis-1/3 h-full fragment">
+<div class="flex flex-col">
+<img alt class="img-fluid w-full" src="figures/example_circle_kernel.png">
+<div class="text-2xl">
+<p>
+$$
+k(\theta, \theta') = \kappa(\theta - \theta')
+$$
+</p>
+</div>
+</div>
+</div>
+<div class="basis-1/3 h-full fragment">
+<div class="flex flex-col">
+<img alt class="img-fluid w-full" src="figures/example_circle_basis.png">
+<div class="text-2xl">
+<p>
+$$
+\Phi(\theta) = [\cos(i \theta), \sin(i \theta)]_{i=0}^\infty
+$$
+</p>
+</div>
+</div>
+</div>
+<div class="basis-1/3 h-full fragment">
+<div class="flex flex-col">
+<img alt class="img-fluid w-full" src="figures/example_circle_sample.png">
+<div class="text-2xl">
+<p>
+$$f(\theta) = \sum\nolimits_i \xi_i \phi_i(\theta)$$
+</p>
+</div>
+</div>
+</div>
+</div>
+<div class="text-left text-2xl bg-slate-100 fragment">
+<p>
+<span class="text-4xl">🤔</span>
+<strong>Exercise.</strong> Compute the Mercer decomposition (i.e. $\lambda_i$, $\phi_i$) for the first-order arc-cosine kernel $\kappa(\rho) = \pi - \rho$ (Cho and Saul, 2009).
+</p>
+</div>
+</section>
+
+<section>
+<h2>Inducing Variables</h2>
+<div class="text-3xl text-left fragment">
+<p>
+An inducing variable is a random variables $\v{u}$ which is MVN with $f(\.)$:
+</p>
+<div class="text-2xl">
+<p class="fragment">
+$$
+\begin{bmatrix}
+f(\.) \\
+\v{u} \\
+\end{bmatrix}
+\~
+\c{N}\Big(
+\begin{bmatrix}
+\v{0} \\
+\v{0} \\
+\end{bmatrix},
+\begin{bmatrix}
+\Cov(f(\.), f(\.)) & \Cov(f(\.), \v{u}) \\
+\Cov(\v{u}, f(\.)) & \Cov(\v{u}, \v{u}) \\
+\end{bmatrix}
+\Big)
+$$
+</p>
+</div>
+<p>
+<span class="font-bold fragment">Example.</span>
+</p>
+</div>
+<div class="flex">
+<div class="w-1/2 h-full fragment">
+<img alt class="img-fluid h-96 pl-12" src="figures/sparse_inducing_points.png">
+</div>
+<div class="w-1/2 text-3xl mt-16">
+<p class="fragment">
+$$u = f(\v{Z})$$
+</p>
+<div class="text-left text-2xl">
+<p class="py-2 fragment">&bull; $\Cov(f(\.), f(\.)) = k(\.,\.)$</p>
+<p class="py-2 fragment">&bull; $\Cov(f(\.), \v{u}) = \Cov(f(\.), f(\v{Z})) = k(\., \v{Z})$</p>
+<p class="py-2 fragment">&bull; $\Cov(\v{u}, \v{u}) = \Cov(f(\v{Z}), f(\v{Z})) = k(\v{Z}, \v{Z})$</p>
+</div>
+</div>
+</div>
+</section>
+
+<section>
+<h2>Spectral Inducing Variables</h2>
+<div class="flex flex-row">
+<div class="basis-1/3 fragment"><p>$$ u_i = f(z_i) \vphantom{\int}$$</p></div>
+<div class="basis-1/3 fragment"><p>$$ \rightarrow \vphantom{\int}$$</p></div>
+<div class="basis-1/3 fragment"><p>$$ u_i = \int f(x) \phi_i(x) \d x $$</p></div>
+</div>
+<div class="flex flex-row">
+<div class="basis-1/2 fragment">
+<div class="text-left text-2xl">
+<p class="py-5">&bull; $\Cov(f(\.), f(\.)) = k(\.,\.)$</p>
+<p class="py-5">&bull; $\Cov(f(\.), \v{u}) = \Cov(f(\.), f(\v{Z})) = k(\., \v{Z})$</p>
+<p class="py-5">&bull; $\Cov(\v{u}, \v{u}) = \Cov(f(\v{Z}), f(\v{Z})) = k(\v{Z}, \v{Z})$</p>
+</div>
+</div>
+<div class="basis-1/2">
+<div class="text-left text-2xl -ml-10">
+<p class="py-4 fragment">&bull; $\Cov(f(\.), f(\.)) = k(\.,\.)$</p>
+<p class="py-4 fragment">&bull; $\Cov(f(\.), \v{u}) = \Cov\big(f(\.), \int f(x) \phi_i(x) \d x\Big)$</p>
+<p class="py-4 fragment">&bull; $\Cov(\v{u}, \v{u}) = \Cov\Big(\int f(x) \phi_i(x) \d x, \int f(x) \phi_i(x) \d x\Big)$</p>
+</div>
+</div>
+</div>
+</section>
+<!-- Part II: Spherical -->
+<section>
+<h2>Part 2: Spherical Gaussian Processes</h2>
+<div class="flex flex-row justify-center h-full w-full">
+<img class="scale-100" src="figures/sphere2.gif" alt="funny animation GIF">
+</div>
+</section>
+
+<section>
+<h2>Why?</h2>
+<div>
+<p>
+$$
+\begin{aligned}
+\htmlClass{fragment}{\textrm{ReLU}(\v{w}^\top \v{x} + b)}
+&amp;
+\htmlClass{fragment}{= \textrm{ReLU}\big( 
+\begin{bmatrix}
+\v{w} \\
+b \\
+\end{bmatrix}^\top
+\begin{bmatrix}
+\v{x} \\
+1 \\
+\end{bmatrix}
+\big)} \\
+&amp; 
+\htmlClass{fragment}{=
+\textrm{ReLU}\big(
+\vphantom{\int}
+r_{\tilde{\v{x}}}
+r_{\tilde{\v{w}}}
+\cos(\theta_{\tilde{\v{x}}\tilde{\v{w}}})
+\big)
+} \\
+&amp; 
+\htmlClass{fragment}{=
+\vphantom{\int}
+r_{\tilde{\v{x}}}
+r_{\tilde{\v{w}}}
+\textrm{ReLU}\big(\cos(\theta_{\tilde{\v{x}}\tilde{\v{w}}})\big)
+} \\
+\end{aligned}
+$$
+</p>
+</div>
+</section>
+
+<section>
+<div class="flex flex-row justify-center h-full w-full">
+<img class="scale-100" src="figures/relu_2d.png" alt="funny animation GIF">
+</div>
+</section>
+
+
+<section>
+<div class="flex flex-row justify-center h-full w-full">
+<img class="scale-100 -translate-y-28" src="figures/relu_3d.png" alt="funny animation GIF">
+</div>
+</section>
+
+
+<section>
+<h2>Zonal kernels</h2>
+<div class="flex flex-row justify-center h-full w-full -my-24">
+<img class="scale-100" src="figures/arccosine_sphere.png" alt="funny animation GIF">
+</div>
+<div class="text-left text-3xl my-10">
+<p class="fragment">&bull; Spherical counterpart of stationary kernels: $k(x, x') = \kappa(x^\top x')$.
+<p class="fragment">&bull; We can compute Mercer's decomposition: $k(x,x') = \sum_i \lambda_i \phi_i(x)\phi_i(x')$.
+</p>
+</div>
+</section>
+
+<section>
+<h2 class="z-40">Spherical Harmonics $\phi$</h2>
+<div class="flex flex-row justify-center h-full w-full -my-36">
+<img class="scale-100 -z-20" src="figures/harmonics.png" alt="funny animation GIF">
+</div>
+</section>
+
+<section>
+<h2>Spherical Matérn</h2>
+<div class="text-2xl">
+<p>
+$$
+f(\.) = \sum_{i=0}^\infty \xi_i \phi_i(\.),
+\htmlClass{fragment}{
+\quad\text{with}\quad \xi_i \~_{i.i.d.} \c{N}(0, \lambda_i)
+}
+$$
+</p>
+</div>
+<div class="flex flex-row h-full">
+<div class="basis-1/3 fragment text-2xl">
+<p>$\nu = 1/2$</p>
+<img class="translate-x-4" src="figures/sphere_matern_12.png" alt="funny animation GIF">
+</div>
+<div class="basis-1/3 fragment text-2xl">
+<p>$\nu = 3/2$</p>
+<img class="" src="figures/sphere_matern_32.png" alt="funny animation GIF">
+</div>
+<div class="basis-1/3 fragment text-2xl">
+<p>$\nu = 5/2$</p>
+<img class="" src="figures/sphere_matern_52.png" alt="funny animation GIF">
+</div>
+</div>
+<div class="text-base text-left my-10 fragment">
+<p>Images: A. Solin, S.  Särkkä. Hilbert space methods for reduced-rank Gaussian process regression. <em>Springer Statistics and Computing.</em> 2020.</p>
+</div>
+</section>
+
+<section>
+<h2>Reproducing kernel hilbert space</h2>
+<div class="text-left text-3xl">
+<span class="fragment">
+<p>
+A Hilbert space of functions:
+$$
+\c{H}_k = \Big\{f(\.) = \sum_i \hat{f}_i \phi_i(\.): \|f\|_{\c{H}_k} < \infty \Big\}
+$$
+</p>
+</span>
+
+<span class="fragment">
+<p>
+With inner product:
+$$
+\langle f(\.), g(\.) \rangle_{\c{H}_k} = \sum\nolimits_i \frac{\hat{f}_i\, \hat{g}_i}{\lambda_i}
+$$
+</p>
+</span>
+<span class="fragment">
+<p>
+And reproducing property:
+$$
+\langle f(\.), k(\., x) \rangle_{\c{H}_k} = f(x)
+$$
+</p>
+</span>
+</div>
+
+</section>
+
+<section>
+<h2>Spherical Harmonics Inducing Variables</h2>
+<div class="text-left text-3xl">
+<p>
+<strong>
+Let's define
+</strong>
+$$
+u_i = \langle f(\.), \phi_i(\. )\rangle_{\c{H}_k}
+$$
+</p>
+<div class="text-left text-2xl">
+<strong class="text-3xl fragment"><p>Key quantities:</p></strong>
+<p class="py-4 fragment">&bull; $\Cov(f(\.), f(\.)) = k(\.,\.)$</p>
+<p class="py-4 fragment">&bull; $
+\Cov(f(x), u_i) 
+\htmlClass{fragment}{
+= \Cov\big(f(x), \langle f(\.), \phi_i(\. )\rangle_{\c{H}_k} \big) 
+}
+\htmlClass{fragment}{
+= \big\langle \Cov(f(x) f(\.)), \phi_i(\. )\big\rangle_{\c{H}_k}
+}
+\htmlClass{fragment}{
+= \big\langle k(x, \.), \phi_i(\. )\big\rangle_{\c{H}_k}
+}
+\htmlClass{fragment}{
+= \phi_i(x)
+}
+$
+</p>
+<p class="py-4 fragment">&bull; $
+\Cov(u_i, u_j) = 
+\htmlClass{fragment}{
+\frac{\delta_{ij}}{\lambda_i}
+}
+$
+</div>
+</div>
+</section>
+
+<section>
+<h2>Sparse Approximation</h2>
+<div class="flex flex-col text-left text-3xl">
+<div class="basis-1/3 fragment">
+<h3><strong>Inducing points:</strong> $\v{u} = f(\m{Z})$, and $q(\v{u}) = \c{N}(\v{m}, \m{S})$:</h3>
+<p class="fragment">
+$$
+\begin{aligned}
+q(f) &amp;= \c{GP}\Big(
+	\htmlClass{fragment}{
+	k(\., \m{Z}) {\m{K}^{-1}_{\m{Z}\m{Z}}} \v{m};
+	}
+	\htmlClass{fragment}{
+	\ \ k(\.,\.) - k(\., \m{Z}) \m{K}^{-1}_{ZZ} (\m{K}_{ZZ} - \m{S}) \m{K}^{-1}_{ZZ} k(\m{Z}, \.)
+	}
+\Big)
+\\[5mm] &amp;
+\htmlClass{fragment}{
+= \c{GP}(\v{\alpha}^\top k(\v{Z}, \.); \quad \cdots)
+}
+\end{aligned}
+$$
+</p>
+</div>
+<div class="basis-1/3 fragment">
+<h3><strong>Spherical Harmonic Inducing Variables:</strong> $u_i = \langle f(\.),\phi_i(\.) \rangle_{\c{H}_k}$:</h3>
+<p class="fragment">
+$$
+q(f) = \c{GP}\Big(
+	\htmlClass{fragment}{\v{\alpha}^\top \Phi(\.);}
+	\htmlClass{fragment}{\ \ \Phi(\.)^\top (\textrm{diag}(\lambda_1, \lambda_2,\ldots) - \m{S}) \Phi(\.)}
+\Big)
+$$
+</p>
+</div>
+</div>
+</section>
+
+<section>
+<h2>Data doens't live on the sphere...</h2>
+<div class="flex flex-row justify-center h-full w-full">
+<img class="-z-40 -translate-y-24 scale-90" src="figures/mapping_2d.png" alt="funny animation GIF">
+</div>
+</section>
+
+<section>
+<h2 class="z-40">Data doens't live on the sphere...</h2>
+<div class="flex flex-row justify-center h-full w-full">
+<img class="-z-20 scale-75 -translate-y-64" src="figures/mapping_sphere_plane_3d.gif" alt="funny animation GIF">
+</div>
+</section>
+
+<section>
+<h2>Experiment</h2>
+<div class="text-left text-2xl">
+<p>
+Airline dataset: 6,000,000 datapoints regression task fitted in 40 seconds on a single <em>cheap</em> GTX 1070 GPU
+</p>
+</div>
+<div class="flex flex-row my-20">
+<div class="basis-1/2 text-2xl">
+<p>NLPD</p>
+<img class="" src="figures/airline_chart_nlpd.png" alt="funny animation GIF">
+</div>
+<div class="basis-1/2 text-2xl">
+<p>Time</p>
+<img class="" src="figures/airline_chart_time.png" alt="funny animation GIF">
+</div>
+</div>
+</section>
+
+
+<section class="text-left">
+
+<h1 class="h1 mt-1 mb-2 text-center">Thank you!</h1>
+
+<p class="py-2 scriptsize fragment">
+J. Hensman, N. Durrande, A. Solin. Variational Fourier Features. <em>Journal of Machine Learning Research</em>. 2018.
+</p>
+<p class="py-2 scriptsize fragment">
+A. Solin, S.  Särkkä. Hilbert space methods for reduced-rank Gaussian process regression. <em>Springer Statistics and Computing.</em> 2020.
+</p>
+<p class="py-2 scriptsize fragment">
+V. Dutordoir, N. Durrande, J. Hensman. Spherical Gaussian Processes. <em>International Conference on Machine Learning</em>, 2020.
+</p>
+<p class="py-2 scriptsize fragment">
+V. Dutordoir, J. Hensman, M. van der Wilk, C.H. Ek, Z. Ghahramani, N. Durrande. Deep Neural Networks as Point Estimates for Deep Gaussian Processes.<em>Advances in Neural Information Processing Systems</em>, 2021.
+</p>
+<p class="py-2 scriptsize fragment">
+I. Azangulov, A. Smolensky, A. Terenin, V. Borovitskiy. Stationary Kernels and Gaussian Processes on Lie Groups and their Homogeneous Spaces I: the Compact Case. 2022.
+</p>
+</section>
+	
+</div>
+</div>
+
+</body>
+</html>
