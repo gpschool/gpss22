@@ -15,8 +15,6 @@ This lab is designed to introduce Gaussian processes in a practical way, illustr
 
 [![Download](https://img.shields.io/badge/download-lab%201-green)](https://github.com/gpschool/labs/raw/2022/lab_1.ipynb) &nbsp;&nbsp;&nbsp;
 [![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/gpschool/labs/2022?filepath=lab_1.ipynb) &nbsp;&nbsp;&nbsp;
-<!--[![Mirror 1](https://img.shields.io/badge/mirror%201-binder-blueviolet)](https://mybinder.org/v2/gh/wilocw/labs/2022?filepath=lab_1.ipynb)&nbsp;&nbsp;&nbsp;
-[![Mirror 2](https://img.shields.io/badge/mirror%202-binder-blueviolet)](https://mybinder.org/v2/gh/SheffieldMLNet/labs/2022?filepath=lab_1.ipynb)&nbsp;&nbsp;&nbsp;-->
 [![Answers](https://img.shields.io/badge/answers-nbviewer-green)](https://nbviewer.jupyter.org/github/gpschool/labs/blob/2022/answers/lab_1.ipynb)
 
 Resources: [mauna_loa](https://github.com/gpschool/labs/raw/2022/.resources/mauna_loa)
@@ -24,11 +22,9 @@ Resources: [mauna_loa](https://github.com/gpschool/labs/raw/2022/.resources/maun
 #### Lab 1 Extra: Uncertainty Propagation
 This lab is an extension on the work introduced in Lab 1 of the summer school. It is more advanced, and you should make sure you've completed Lab 1 before attempting. It is designed to demonstrate the advantage of using models when we have only a small number of observations of a latent function.
 
-[![Download](https://img.shields.io/badge/download-lab%201%20extra-green)](https://github.com/gpschool/labs/raw/2021/2021/lab_1_extra.ipynb)&nbsp;&nbsp;&nbsp;
-[![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/gpschool/labs/2021?filepath=2021%2Flab_1_extra.ipynb)&nbsp;&nbsp;&nbsp;
-<!--[![Mirror 1](https://img.shields.io/badge/mirror%201-binder-blueviolet)](https://mybinder.org/v2/gh/wilocw/labs/2021?filepath=2021%2Flab_1_extra.ipynb)&nbsp;&nbsp;&nbsp;
-[![Mirror 2](https://img.shields.io/badge/mirror%202-binder-blueviolet)](https://mybinder.org/v2/gh/SheffieldMLNet/labs/2021?filepath=2021%2Flab_1_extra.ipynb)&nbsp;&nbsp;&nbsp;-->
-[![Answers](https://img.shields.io/badge/answers-nbviewer-green)](https://nbviewer.jupyter.org/github/gpschool/labs/blob/2021/2021/answers/lab_1_extra.ipynb)
+[![Download](https://img.shields.io/badge/download-lab%201%20extra-green)](https://github.com/gpschool/labs/raw/2022/lab_1_extra.ipynb)&nbsp;&nbsp;&nbsp;
+[![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/gpschool/labs/2022?filepath=lab_1_extra.ipynb)&nbsp;&nbsp;&nbsp;
+[![Answers](https://img.shields.io/badge/answers-nbviewer-green)](https://nbviewer.jupyter.org/github/gpschool/labs/blob/2022/answers/lab_1_extra.ipynb)
 
 
 ### Lab 2: GPs for Non-Gaussian Likelihoods and Big Data
@@ -40,8 +36,6 @@ You will need to also download the banana.csv dataset for one of the examples in
 
 [![Download](https://img.shields.io/badge/download-lab%202-green)](https://github.com/gpschool/labs/raw/2022/lab_2.ipynb)&nbsp;&nbsp;&nbsp;
 [![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/gpschool/labs/2022?filepath=lab_2.ipynb)&nbsp;&nbsp;&nbsp;
-<!--[![Mirror 1](https://img.shields.io/badge/mirror%201-binder-blueviolet)](https://mybinder.org/v2/gh/wilocw/labs/2022?filepath=lab_2.ipynb)&nbsp;&nbsp;&nbsp;
-[![Mirror 2](https://img.shields.io/badge/mirror%202-binder-blueviolet)](https://mybinder.org/v2/gh/SheffieldMLNet/labs/2022?filepath=lab_2.ipynb)&nbsp;&nbsp;&nbsp;-->
 [![Answers](https://img.shields.io/badge/answers-nbviewer-green)](https://nbviewer.jupyter.org/github/gpschool/labs/blob/2022/answers/lab_2.ipynb)
 
 
@@ -55,8 +49,6 @@ This lab introduces the basic concepts of Bayesian optimisation with GPyOpt. The
 
 [![Download](https://img.shields.io/badge/download-lab%203-green)](https://github.com/gpschool/labs/raw/2022/lab_3.ipynb)&nbsp;&nbsp;&nbsp;
 [![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/gpschool/labs/2022?filepath=lab_3.ipynb)&nbsp;&nbsp;&nbsp;
-<!--[![Mirror 1](https://img.shields.io/badge/mirror%201-binder-blueviolet)](https://mybinder.org/v2/gh/wilocw/labs/2022?filepath=lab_3.ipynb)&nbsp;&nbsp;&nbsp;
-[![Mirror 2](https://img.shields.io/badge/mirror%202-binder-blueviolet)](https://mybinder.org/v2/gh/SheffieldMLNet/labs/2022?filepath=lab_3.ipynb)&nbsp;&nbsp;&nbsp;-->
 [![Answers](https://img.shields.io/badge/answers-nbviewer-green)](https://nbviewer.jupyter.org/github/gpschool/labs/blob/2022/answers/lab_3.ipynb)
 
 #### Lab 3 Extra: Deep Gaussian Processes
@@ -66,8 +58,6 @@ This lab introduces regression with hierarchical "deep" Gaussian processes. You 
 
 [![Download](https://img.shields.io/badge/download-lab%202%20extra-green)](https://github.com/gpschool/labs/raw/2022/lab_3_extra.ipynb)&nbsp;&nbsp;&nbsp;
 [![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/gpschool/labs/2022?filepath=lab_3_extra.ipynb)&nbsp;&nbsp;&nbsp;
-<!--[![Mirror 1](https://img.shields.io/badge/mirror%201-binder-blueviolet)](https://mybinder.org/v2/gh/wilocw/labs/2021?filepath=lab_3_extra.ipynb)&nbsp;&nbsp;&nbsp;
-[![Mirror 2](https://img.shields.io/badge/mirror%202-binder-blueviolet)](https://mybinder.org/v2/gh/SheffieldMLNet/labs/2022?filepath=lab_3_extra.ipynb)&nbsp;&nbsp;&nbsp;-->
-[![Answers](https://img.shields.io/badge/answers-nbviewer-green)](https://nbviewer.jupyter.org/github/wilocw/labs/blob/2022/answers/lab_3_extra.ipynb)
+[![Answers](https://img.shields.io/badge/answers-nbviewer-green)](https://nbviewer.jupyter.org/github/gpschool/labs/blob/2022/answers/lab_3_extra.ipynb)
 
 
