@@ -66,8 +66,8 @@ conference:
 
 
 previous_meeting:
-  name: Past Meetings
-  url: "http://gpss.cc/past_meetings.html"
+  name: GPSS 2021
+  url: "htts://gpss.cc/gpss2021/
 
 map:
   show: true
