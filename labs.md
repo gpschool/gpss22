@@ -44,7 +44,7 @@ Resources: [olympic_marathon_men](https://github.com/gpschool/labs/raw/2022/.res
 **Note: ensure you have installed libraries, particularly `climin`, as per the instructions in [Getting Started](./getting_started). Installing `climin` using `$ pip install climin` _will not work_ with the labs as this is Python 2 only. Remove it, and follow the instructions.**
 
 ### Lab 3: Global Optimisation with Gaussian Processes
-This lab introduces the basic concepts of Bayesian optimisation with GPyOpt. The student will have to build and compare different models and aquisition functions to solve several optimisation problems.
+This lab introduces the basic concepts of Bayesian optimisation with Emukit. The student will have to build and compare different models and aquisition functions to solve several optimisation problems.
 
 
 [![Download](https://img.shields.io/badge/download-lab%203-green)](https://github.com/gpschool/labs/raw/2022/lab_3.ipynb)&nbsp;&nbsp;&nbsp;
